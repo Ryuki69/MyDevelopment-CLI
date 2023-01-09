@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Swiper
+-------------------------------------------------- */
+.swiper {
+  width: 100%;
+  padding-bottom: pxToRem(30px);
+}
+
+.swiper-button-prev::after {
+  color: #391e88;
+  font-size: pxToRem(32px);
+  font-weight: 900;
+}
+
+.swiper-button-next::after {
+  color: #391e88;
+  font-size: pxToRem(32px);
+  font-weight: 900;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 0;
+  text-align: right;
+}
+
+.swiper-pagination-bullet {
+  background-color: #391e88;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #391e88;
+}

@@ -1,0 +1,38 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Map
+-------------------------------------------------- */
+.p-map {
+  position: relative;
+  width: 100%;
+  padding-top: calc(240 / 335 * 100%);
+
+  @include mq(lg) {
+    padding-top: calc(394 / 1110 * 100%);
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__link {
+    margin-top: pxToRem(10px);
+    font-size: pxToRem(14px);
+
+    @include mq(lg) {
+      font-size: pxToRem(16px);
+    }
+
+    a {
+      color: #240c6a;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../global" as *;
+
+/*
+  Header
+-------------------------------------------------- */
+.l-header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+}
+
+.p-header {
+  transition: background-color .5s;
+  background-color: transparent;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 92%;
+    margin: 0 auto;
+    padding: pxToRem(22px) 0;
+
+    @include mq(lg) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    width: 124px;
+    font-size: pxToRem(16px);
+    line-height: 1;
+
+    & svg {
+      width: 124px;
+      height: 22px;
+
+      @include mq(lg) {
+        width: 160px;
+        height: 17px;
+      }
+    }
+  }
+}
+
+.js-header {
+  &.is-headerActive {
+    background-color: #21054d;
+    // transition: background-color 0.3s;
+  }
+}

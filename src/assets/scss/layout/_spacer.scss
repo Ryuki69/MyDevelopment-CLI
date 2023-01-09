@@ -1,0 +1,96 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../global" as *;
+
+/*
+  Spacer
+-------------------------------------------------- */
+.l-spacer {
+  &.-bgGrey {
+    background-color: #f0f0f0;
+  }
+
+  &.-bgBlue {
+    background-color: #f1f7fc;
+  }
+
+  &.-smTop {
+    padding-top: pxToRem(30px);
+  }
+
+  &.-mdTop {
+    padding-top: pxToRem(40px);
+
+    @include mq(lg) {
+      padding-top: pxToRem(56px);
+    }
+  }
+
+  &.-lgTop {
+    padding-top: pxToRem(40px);
+
+    @include mq(md) {
+      padding-top: pxToRem(56px);
+    }
+
+    @include mq(lg) {
+      padding-top: pxToRem(70px);
+    }
+  }
+
+  &.-xlTop {
+    padding-top: pxToRem(80px);
+
+    @include mq(lg) {
+      padding-top: pxToRem(100px);
+    }
+  }
+
+  &.-mdBottom {
+    padding-bottom: pxToRem(40px);
+
+    @include mq(lg) {
+      padding-bottom: pxToRem(70px);
+    }
+  }
+
+  &.-xlBottom {
+    padding-bottom: pxToRem(80px);
+
+    @include mq(lg) {
+      padding-bottom: pxToRem(110px);
+    }
+  }
+
+  &.-lg {
+    padding: pxToRem(40px) 0;
+
+    @include mq(md) {
+      padding: pxToRem(56px) 0;
+    }
+
+    @include mq(lg) {
+      padding: pxToRem(70px) 0;
+    }
+  }
+
+  &.-xl {
+    padding: pxToRem(56px) 0;
+
+    @include mq(md) {
+      padding: pxToRem(72px) 0;
+    }
+
+    @include mq(lg) {
+      padding: pxToRem(88px) 0;
+    }
+
+    @include mq(xl) {
+      padding: pxToRem(120px) 0;
+    }
+  }
+
+  &.-none {
+    padding: 0;
+  }
+}

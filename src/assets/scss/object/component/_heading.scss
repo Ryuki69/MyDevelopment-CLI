@@ -1,0 +1,42 @@
+@charset 'UTF-8';
+@use "../../global" as *;
+
+/*
+  Heading
+-------------------------------------------------- */
+.c-heading {
+  margin-bottom: pxToRem(30px);
+  font-weight: bold;
+
+  &.-primary {
+    color: #391e88;
+    font-size: pxToRem(14px);
+  }
+
+  &.-center {
+    text-align: center;
+  }
+
+  &.-primary .c-heading__en {
+    font-size: pxToRem(30px);
+
+    @include mq(lg) {
+      font-size: pxToRem(36px);
+    }
+  }
+
+  &.-primary .c-heading__ja {
+    font-size: pxToRem(14px);
+  }
+
+  &.-secondary {
+    color: $heading-secondary-color;
+    font-size: pxToRem(24px);
+    font-weight: bold;
+    text-align: center;
+
+    @include mq(lg) {
+      font-size: pxToRem(32px);
+    }
+  }
+}

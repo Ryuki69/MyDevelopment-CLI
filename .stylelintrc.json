@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-property-sort-order-smacss",
+    "stylelint-prettier/recommended"
+  ],
+  "plugins": ["stylelint-prettier", "stylelint-scss", "stylelint-order"],
+  "ignoreFiles": ["**/node_modules/**"],
+  "rules": {
+    "prettier/prettier": true,
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "number-leading-zero": "never",
+    "scss/no-global-function-names": null
+  }
+}

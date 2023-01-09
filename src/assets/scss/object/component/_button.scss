@@ -1,0 +1,35 @@
+@charset 'UTF-8';
+@use "../../global" as *;
+
+/*
+  Button
+-------------------------------------------------- */
+.c-button {
+  display: inline-block;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+
+  &.-primary {
+    text-align: center;
+  }
+}
+
+.p-button {
+  position: relative;
+  width: 200px;
+  padding: pxToRem(18px) 0;
+  transition: .4s;
+  border-radius: 50px;
+  background-image: linear-gradient(to right, #7633a4 0%, #3d1978 51%, #7633a4 100%);
+  background-size: 200% auto;
+  color: #fff;
+  font-size: pxToRem(14px);
+  font-weight: bold;
+  letter-spacing: .05em;
+
+  &:hover {
+    background-position: right center;
+  }
+}

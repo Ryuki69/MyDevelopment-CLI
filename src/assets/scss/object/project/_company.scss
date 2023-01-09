@@ -1,0 +1,68 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Company
+-------------------------------------------------- */
+.p-company {
+  width: 89.3333333333%;
+  max-width: 1300px;
+  margin: 0 auto;
+
+  &.-home {
+    padding-top: pxToRem(40px);
+    padding-bottom: pxToRem(88px);
+    background-image: url(../../../images/sp-cirlcles.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+
+    @include mq(lg) {
+      padding-top: pxToRem(140px);
+      background-image: url(../../../images/pc-company-circle.png), url(../../../images/pc-company-face.jpg);
+    }
+  }
+
+  &.-page {
+    padding-top: pxToRem(60px);
+    padding-bottom: 0;
+    background-image: url(../../../images/sp-cirlcles.png);
+    background-repeat: no-repeat;
+    background-position: center -20px, center center;
+    background-size: contain;
+
+    @include mq(lg) {
+      padding-top: pxToRem(100px);
+      padding-bottom: pxToRem(88px);
+      background-image: url(../../../images/pc-company-circle.png), url(../../../images/pc-company-face.jpg);
+      background-position: center -20px, center 40px;
+    }
+  }
+
+  &__empha {
+    font-size: pxToRem(32px);
+    letter-spacing: .05em;
+    line-height: 1.5;
+
+    @include mq(md) {
+      font-size: pxToRem(40px);
+      line-height: .8;
+    }
+  }
+
+  &__line {
+    background: linear-gradient(transparent 70%, #f5f534 0%);
+  }
+
+  &__text {
+    font-size: pxToRem(14px);
+    letter-spacing: .05em;
+    line-height: 1.78571428571;
+
+    @include mq(md) {
+      font-size: pxToRem(16px);
+      line-height: 1.8;
+    }
+  }
+}

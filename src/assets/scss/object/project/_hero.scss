@@ -1,0 +1,167 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Hero
+-------------------------------------------------- */
+.p-hero {
+  position: relative;
+
+  &.-home {
+    height: 100vh;
+  }
+
+  &.-home .p-hero__body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    padding-right: pxToRem(35px);
+    padding-left: pxToRem(50px);
+    transform: translate(-50%, -50%);
+    text-align: left;
+
+    @include mq(lg) {
+      text-align: center;
+    }
+  }
+
+  &.-home .p-hero__title {
+    margin-bottom: pxToRem(20px);
+    color: #fff;
+    font-size: pxToVw(48px);
+    font-weight: bold;
+    line-height: 1.29166666667;
+
+    @include mq(md) {
+      font-size: pxToRem(64px);
+      line-height: 1.25;
+    }
+
+    @include mq(lg) {
+      font-size: pxToRem(72px);
+    }
+  }
+
+  &.-home .p-hero__subtitle {
+    color: #fff;
+    font-size: pxToRem(16px);
+    letter-spacing: .108em;
+    line-height: 1.8125;
+
+    @include mq(md) {
+      font-size: pxToRem(24px);
+      line-height: 1.58333333333;
+    }
+  }
+
+  &__title.-en {
+    display: block;
+    font-size: pxToRem(16px);
+
+    @include mq(md) {
+      font-size: pxToRem(24px);
+    }
+  }
+
+  /* 下層ページのHero */
+  &.-page {
+    height: 190px;
+    background-image: url(../../../images/hero-page_sp.jpg);
+    background-image: image-set(url(../../../images/hero-page_sp.jpg) 1x, url(../../../images/hero-page_sp@2x.jpg) 2x);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    @include mq(lg) {
+      height: 240px;
+      background-image: url(../../../images/hero-page_pc.jpg);
+      background-image: image-set(
+        url(../../../images/hero-page_pc.jpg) 1x,
+        url(../../../images/hero-page_pc@2x.jpg) 2x
+      );
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+
+  &.-page .p-hero__body {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+  }
+
+  &.-page .p-hero__title {
+    color: $text-secondary-color;
+    font-size: pxToRem(30px);
+    font-weight: bold;
+    letter-spacing: .05em;
+    line-height: 1;
+    text-align: center;
+
+    @include mq(lg) {
+      font-size: pxToRem(36px);
+    }
+  }
+
+  &.-page .p-hero__ja {
+    display: block;
+    margin-top: pxToRem(10px);
+    color: $text-secondary-color;
+    font-size: pxToRem(13px);
+    font-weight: bold;
+    letter-spacing: .05em;
+    text-align: center;
+  }
+
+  /* 共通のHero */
+  &__button {
+    margin-top: pxToRem(48px);
+    font-size: pxToRem(16px);
+  }
+
+  &__link {
+    display: inline-block;
+    padding: pxToRem(20px) pxToRem(70px);
+    border: 1px solid #fff;
+    border-radius: 50px;
+    color: $text-secondary-color;
+    text-decoration: none;
+  }
+
+  &__scroll {
+    display: inline-block;
+    position: absolute;
+    right: 12px;
+    bottom: 0;
+    padding-bottom: 60px;
+    color: $text-secondary-color;
+    font-size: pxToRem(12px);
+    letter-spacing: .08em;
+    writing-mode: vertical-lr;
+
+    @include mq(lg) {
+      right: 22px;
+      padding-bottom: 88px;
+    }
+  }
+
+  &__scroll::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    height: 50px;
+    transform: translateX(-50%);
+    animation: scrollDown 1.4s ease-in-out infinite;
+    background-color: #fff;
+
+    @include mq(lg) {
+      height: 80px;
+    }
+  }
+}

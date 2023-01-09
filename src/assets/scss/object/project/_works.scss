@@ -1,0 +1,69 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Works
+-------------------------------------------------- */
+.p-works {
+  display: flex;
+  position: relative;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  padding-right: pxToRem(20px);
+  padding-bottom: pxToRem(60px);
+  padding-left: pxToRem(20px);
+
+  @include mq(lg) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 78%;
+    background-color: #f0f0f0;
+
+    @include mq(lg) {
+      top: 0;
+      width: 66.4285714286%;
+      height: 100%;
+    }
+  }
+
+  &__body {
+    margin-top: pxToRem(40px);
+
+    @include mq(lg) {
+      flex: 1;
+      margin-top: 0;
+      padding-right: pxToRem(60px);
+    }
+  }
+
+  &__text {
+    font-size: pxToRem(14px);
+    letter-spacing: .05em;
+    line-height: 1.78571428571;
+    text-align: center;
+  }
+
+  &__thumbnail {
+    width: 100%;
+
+    @include mq(lg) {
+      width: 59.5238095238%;
+      margin-right: pxToRem(20px);
+      padding: pxToRem(60px) 0 pxToRem(80px) 0;
+    }
+  }
+}

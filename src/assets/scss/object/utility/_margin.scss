@@ -1,0 +1,9 @@
+@charset 'UTF-8';
+@use "../../global" as *;
+
+/*
+  Margin
+-------------------------------------------------- */
+.u-mt16 {
+  margin-top: pxToRem(16px);
+}

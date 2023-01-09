@@ -1,0 +1,10 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Uppercase
+-------------------------------------------------- */
+.u-uppercase {
+  text-transform: uppercase;
+}

@@ -1,0 +1,26 @@
+@charset 'UTF-8';
+@use "../global" as *;
+/*
+  Base
+-----------------------------------------------------*/
+
+body {
+  color: $text-primary-color;
+  font-family: "Noto Sans JP", "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, sans-serif;
+  letter-spacing: .05em;
+  line-height: 1.5;
+}
+
+.is-drawerActive body {
+  overflow: hidden;
+
+  @include mq(lg) {
+    overflow: visible;
+  }
+}
+
+*[lang="en"] {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+}

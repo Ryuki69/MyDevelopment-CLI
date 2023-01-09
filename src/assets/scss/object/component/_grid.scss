@@ -1,0 +1,89 @@
+@charset 'UTF-8';
+@use "../../global" as *;
+
+/*
+  Grid
+-------------------------------------------------- */
+
+.c-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  &.-gutter > &__item {
+    border: 0px solid transparent;
+    background-clip: padding-box;
+  }
+
+  &.-gutter.-medium > &__item {
+    border-width: 20px;
+
+    @include mq(md) {
+      border-width: 15px;
+    }
+  }
+
+  &.-gutter.-medium {
+    margin: -20px;
+
+    @include mq(md) {
+      margin: -15px;
+    }
+  }
+
+  &.-between {
+    @include mq(md) {
+      justify-content: space-between;
+    }
+  }
+
+  &.-justyCenter {
+    @include mq(md) {
+      justify-content: center;
+    }
+  }
+
+  &.-alignCenter {
+    align-items: center;
+  }
+
+  &.-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &__item.-sp12 {
+    width: 100%;
+  }
+
+  &__item.-mdAuto {
+    @include mq(md) {
+      width: auto;
+    }
+  }
+
+  &__item.-md4 {
+    @include mq(md) {
+      width: 33.33333333%;
+    }
+  }
+
+  &__item.-lg5 {
+    @include mq(lg) {
+      width: 38.6666667%;
+    }
+  }
+
+  &__item.-lg7 {
+    @include mq(lg) {
+      width: 53.33333333%;
+    }
+  }
+}

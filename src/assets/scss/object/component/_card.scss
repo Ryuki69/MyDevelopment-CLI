@@ -1,0 +1,32 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Card
+-------------------------------------------------- */
+.c-card {
+  display: flex;
+  position: relative;
+  flex: 1 1 auto;
+  flex-direction: column;
+
+  &__body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    order: 1;
+  }
+
+  &__title {
+    order: 1;
+  }
+
+  &__thumbnail {
+    order: 0;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

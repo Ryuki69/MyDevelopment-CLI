@@ -1,0 +1,89 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  GlobalNav
+-------------------------------------------------- */
+.p-globalNav {
+  display: flex;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  opacity: 0;
+  background: linear-gradient(to bottom, #642390, #19074a);
+  text-align: center;
+
+  @include mq(lg) {
+    visibility: visible;
+    position: static;
+    flex-direction: row;
+    height: auto;
+    padding: 0;
+    opacity: 1;
+    background: linear-gradient(to bottom, transparent, transparent);
+  }
+
+  .is-drawerActive & {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__item {
+    @include mq(md) {
+      margin: 0;
+      padding-top: pxToRem(30px);
+      padding-bottom: pxToRem(40px);
+    }
+  }
+
+  &__item + .p-globalNav__item {
+    @include mq(lg) {
+      margin: 0;
+      margin-left: pxToRem(24px);
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    padding: pxToRem(20px) 0;
+    color: $text-secondary-color;
+    font-weight: bold;
+    letter-spacing: .05em;
+    line-height: 1;
+    text-decoration: none;
+
+    @include mq(lg) {
+      padding: 0;
+    }
+  }
+
+  &__link::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    transition: width .3s;
+    background-color: #fff;
+
+    @include mq(lg) {
+      bottom: -6px;
+    }
+  }
+
+  &__link:hover::before {
+    width: 100%;
+  }
+}

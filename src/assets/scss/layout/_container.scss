@@ -1,0 +1,28 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../global" as *;
+
+/*
+  Container
+-------------------------------------------------- */
+.l-container {
+  width: 89.3333333333%;
+  max-width: 1110px;
+  margin: 0 auto;
+
+  &.-over {
+    width: 100%;
+  }
+
+  &.-narrow {
+    max-width: 920px;
+  }
+
+  &.-middle {
+    max-width: 1260px;
+  }
+
+  &.-wide {
+    max-width: 1300px;
+  }
+}
