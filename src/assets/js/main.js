@@ -1,7 +1,7 @@
 // import文
 
 import defo, { hello, name } from "./lib/sub";
-import "../sass/common.scss";
+import "../scss/common.scss";
 
 defo(); // デフォルト export の関数
 hello(); // export された関数を実行
